@@ -2,7 +2,7 @@ import Negociacao from "./Negociacao";
 
 export default class Negociacoes 
 {
-    private negociacoes: Array<Negociacao> = [];
+    private negociacoes: Negociacao[] = [] //Array<Negociacao> = [];
     
 
     adicionar(negociacao: Negociacao)
@@ -10,7 +10,7 @@ export default class Negociacoes
         this.negociacoes.push(negociacao);
     }
 
-    listar(): ReadonlyArray<Negociacao> //Array<Negociacao>
+    listar(): readonly Negociacao[] //ReadonlyArray<Negociacao> //Array<Negociacao>
     {
         //return [...this.negociacoes];
         return this.negociacoes;
