@@ -12,26 +12,39 @@ export default class Negociacao
     //    this._valor = valor;
     //}
 
+    /*Nesse caso, nao sao necessarios getters, já que as propriedades sao publicas*/
+    //constructor(
+    //    public readonly data: Date,  
+    //    public readonly quantidade: number,  
+    //    public readonly valor: number 
+    //) {}
+    
+
     constructor(
-        public readonly data: Date, //private _data: Date, 
-        public readonly quantidade: number, //private _quantidade: number, 
-        public readonly valor: number //private _valor: number
+        private _data: Date, 
+        private _quantidade: number, 
+        private _valor: number
     ) {}
 
-    //get data(): Date
-    //{
-    //    return this._data;
-    //}
-//
-    //get quantidade(): number
-    //{
-    //    return this._quantidade;
-    //}
-//
-    //get valor(): number
-    //{
-    //    return this._valor;
-    //}
+    get data(): Date
+    {
+        /*Aqui estamos retornando uma nova referencia da data. Desse modo,
+        evitamos que a propriedade data original da classe possa ser alterada
+        após criada.*/
+
+        const data = new Date(this._data.getTime());
+        return data;
+    }
+
+    get quantidade(): number
+    {
+        return this._quantidade;
+    }
+
+    get valor(): number
+    {
+        return this._valor;
+    }
 
     get volume(): number
     {
