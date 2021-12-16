@@ -9,21 +9,30 @@ export default class Negociacao {
     //    this._quantidade = quantidade;
     //    this._valor = valor;
     //}
-    constructor(_data, _quantidade, _valor) {
-        this._data = _data;
-        this._quantidade = _quantidade;
-        this._valor = _valor;
+    constructor(data, //private _data: Date, 
+    quantidade, //private _quantidade: number, 
+    valor //private _valor: number
+    ) {
+        this.data = data;
+        this.quantidade = quantidade;
+        this.valor = valor;
     }
-    get data() {
-        return this._data;
-    }
-    get quantidade() {
-        return this._quantidade;
-    }
-    get valor() {
-        return this._valor;
-    }
+    //get data(): Date
+    //{
+    //    return this._data;
+    //}
+    //
+    //get quantidade(): number
+    //{
+    //    return this._quantidade;
+    //}
+    //
+    //get valor(): number
+    //{
+    //    return this._valor;
+    //}
     get volume() {
-        return this._valor * this._quantidade;
+        //return this._valor*this._quantidade;
+        return this.valor * this.quantidade;
     }
 }
